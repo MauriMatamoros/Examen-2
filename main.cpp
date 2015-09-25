@@ -11,8 +11,8 @@ int divisores(int);
 
 int main(int argc, char* argv[]){
 	try{
-		Racionales a(1,6), b(4,9), c(1,1);
-		cout << a.toDouble() << endl;
+		Racionales a(3,6), b(4,5), c(1,1);
+		//cout << a.toDouble() << endl;
 		int divisores_denominador = divisores(a.getDenominador());
 		int divisores_numerador = divisores(a.getNumerador());
 		int array_denominador[divisores_denominador];
@@ -46,28 +46,10 @@ int main(int argc, char* argv[]){
 				}
 			}
 		}
-		cout << endl;
-		cout << simplificador << endl;
-		cout << endl;
-		a.simplify(simplificador);
-		cout << a.toString() << endl;
-		cout << endl;
-		cout << "+=" << endl;
+		
 		a+=b;
+
 		cout << a.toString() << endl;
-		cout << endl;
-		cout << "-=" << endl;
-		a-=b;
-		cout << a.toString() << endl;
-		cout << endl;
-		cout << "*=" << endl;
-		a*=b;
-		cout << a.toString() << endl;
-		cout << endl;
-		cout << "/=" << endl;
-		a/=b;
-		cout << a.toString() << endl;
-		cout << endl;
 
 		//Racionales f;
 		//f = b*b;
@@ -89,7 +71,7 @@ int main(int argc, char* argv[]){
 		
 				
 
-		cout << b.toDouble() << endl;
+		
 	}catch (const char* message){
 		cerr << "Excepcion: " << message << endl;
 	}
