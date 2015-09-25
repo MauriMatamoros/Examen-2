@@ -82,7 +82,7 @@ int main(int argc, char* argv[]){
 	return 0;
 }
 
-/*int divisores (int numero){
+int divisores (int numero){
 	int contador = 0;
 	for (int i = 1; i <= numero; ++i)
 	{
@@ -92,4 +92,4 @@ int main(int argc, char* argv[]){
 		}
 	}
 	return contador;
-}*/
+}
