@@ -136,22 +136,22 @@ const Racionales& Racionales::operator=(const Racionales& r){
     this->denominador/=u;
 	return *this;
 }
-const Racionales operator+(const Racionales l, const Racionales& r){
+const Racionales operator+(const Racionales& l, const Racionales& r){
 	Racionales retVal(l);
 	retVal += r;
 	return retVal;
 }
-const Racionales operator-(const Racionales l, const Racionales& r){
+const Racionales operator-(const Racionales& l, const Racionales& r){
 	Racionales retVal(l);
 	retVal -= r;
 	return retVal;
 }
-const Racionales operator*(const Racionales l, const Racionales& r){
+const Racionales operator*(const Racionales& l, const Racionales& r){
 	Racionales retVal(l);
 	retVal *= r;
 	return retVal;
 }
-const Racionales operator/(const Racionales l, const Racionales& r){
+const Racionales operator/(const Racionales& l, const Racionales& r){
 	Racionales retVal(l);
 	retVal /= r;
 	return retVal;
