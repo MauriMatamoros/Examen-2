@@ -1,8 +1,11 @@
 #include <string>
 #include <sstream>
 #include "racionales.h"
+#include <iostream>
 using std::string;
 using std::stringstream;
+using std::cout;
+using std::endl;
 
 Racionales::Racionales(int numerador, int denominador){
 	if(denominador==0)
@@ -37,24 +40,33 @@ string Racionales::toString()const{
 }
 const Racionales& Racionales::operator+=(const Racionales& r){
 	if (this->denominador != r.getDenominador()){
-		this->denominador *= r.getDenominador();
+		//cout << this->denominador << endl;
 		this->numerador *= r.getDenominador();
 		double rDen =0;
 		rDen = this->denominador * r.getNumerador();
+		//cout << rDen << endl;
+		this->denominador *= r.getDenominador();
 		this->numerador+= rDen;
 	}else{
 		this->denominador = r.getDenominador();
-		this->numerador = r.getDenominador();
+		this->numerador += r.getNumerador();
 	}
 	return *this;
 }
 const Racionales& Racionales::operator-=(const Racionales& r){
-	this->numerador -= r.getNumerador();
-	if (this->denominador != r.getDenominador())
-		this->denominador *= r.getDenominador();
-	else
+	if (this->denominador != r.getDenominador()){
+		//cout << this->denominador << endl;
+		this->numerador *= r.getDenominador();
+	double rDen =0;
+	rDen = this->denominador * r.getNumerador();
+		//cout << rDen << endl;
+	this->denominador *= r.getDenominador();
+	this->numerador-= rDen;
+	}else{
 		this->denominador = r.getDenominador();
-	return *this;
+		this->numerador -= r.getNumerador();
+		return *this;
+	}
 }
 const Racionales& Racionales::operator*=(const Racionales& r){
 	this->numerador *= r.getNumerador();
