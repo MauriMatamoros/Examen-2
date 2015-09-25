@@ -49,7 +49,7 @@ int main(int argc, char* argv[]){
 		}
 		
 		a/=b;
-		d = (a+b);
+		//d = (a+b);
 		cout << a.toString() << endl;
 		cout << "d: " << d.toString() << endl; 
 		//Racionales f;
