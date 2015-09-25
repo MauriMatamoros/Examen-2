@@ -10,8 +10,18 @@ using std::endl;
 Racionales::Racionales(int numerador, int denominador){
 	if(denominador==0)
 		throw "Cannot divide by zero";
-	this-> numerador = numerador;
-	this-> denominador = denominador;
+
+	 int u= numerador;
+	 int v= denominador;
+	 while ( v != 0) {
+        int r = u % v;
+        u = v;
+        v = r;
+    }
+
+	this-> numerador = numerador/u;
+	this-> denominador = denominador/u;
+
 }
 void Racionales::setDenominador(int denominador){
 	this-> denominador = denominador;
@@ -29,9 +39,16 @@ double Racionales::toDouble(){
 	double num = this-> numerador, den = this-> denominador;
 	return num/den;
 }
-void Racionales::simplify(int simplificador){
-	this-> denominador = this-> denominador / simplificador;
-	this-> numerador = this-> numerador/ simplificador;
+void Racionales::simplify(){
+	 int u= this->numerador;
+	 int v= this->denominador;
+	 while ( v != 0) {
+        int r = u % v;
+        u = v;
+        v = r;
+    }
+    this->numerador/=u;
+    this->denominador/=u;
 }
 string Racionales::toString()const{
 	stringstream ss;
@@ -51,6 +68,15 @@ const Racionales& Racionales::operator+=(const Racionales& r){
 		this->denominador = r.getDenominador();
 		this->numerador += r.getNumerador();
 	}
+	int u= this->numerador;
+	int v= this->denominador;
+	while ( v != 0) {
+        int r = u % v;
+        u = v;
+        v = r;
+    }
+    this->numerador/=u;
+    this->denominador/=u;
 	return *this;
 }
 const Racionales& Racionales::operator-=(const Racionales& r){
@@ -66,11 +92,29 @@ const Racionales& Racionales::operator-=(const Racionales& r){
 		this->denominador = r.getDenominador();
 		this->numerador -= r.getNumerador();
 	}
+	int u= this->numerador;
+	int v= this->denominador;
+	while ( v != 0) {
+        int r = u % v;
+        u = v;
+        v = r;
+    }
+    this->numerador/=u;
+    this->denominador/=u;
 	return *this;
 }
 const Racionales& Racionales::operator*=(const Racionales& r){
 	this->numerador *= r.getNumerador();
 	this->denominador *= r.getDenominador();
+	int u= this->numerador;
+	int v= this->denominador;
+	while ( v != 0) {
+        int r = u % v;
+        u = v;
+        v = r;
+    }
+    this->numerador/=u;
+    this->denominador/=u;
 	return *this;
 }
 const Racionales& Racionales::operator/=(const Racionales& r){
@@ -81,6 +125,15 @@ const Racionales& Racionales::operator/=(const Racionales& r){
 const Racionales& Racionales::operator=(const Racionales& r){
 	this->numerador = r.getNumerador();
 	this->denominador = r.getDenominador();
+	int u= this->numerador;
+	int v= this->denominador;
+	while ( v != 0) {
+        int r = u % v;
+        u = v;
+        v = r;
+    }
+    this->numerador/=u;
+    this->denominador/=u;
 	return *this;
 }
 const Racionales operator+(const Racionales l, const Racionales& r){

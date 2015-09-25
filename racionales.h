@@ -11,7 +11,7 @@ class Racionales{
  	string toString() const;
  	void setNumerador(int);
  	void setDenominador(int);
- 	void simplify(int);
+ 	void simplify();
  	int getNumerador()const;
  	int getDenominador()const;
  	double toDouble();
@@ -20,8 +20,10 @@ class Racionales{
 	const Racionales& operator*=(const Racionales&);
 	const Racionales& operator/=(const Racionales&);
 	const Racionales& operator=(const Racionales&);
+
+	
+	friend const Racionales operator+(const Racionales&,const Racionales&);
+	friend const Racionales operator-(const Racionales&,const Racionales&);
+	friend const Racionales operator*(const Racionales&,const Racionales&);
+	friend const Racionales operator/(const Racionales&,const Racionales&);
 };
-const Racionales operator+(const Racionales&,const Racionales&);
-const Racionales operator-(const Racionales&,const Racionales&);
-const Racionales operator*(const Racionales&,const Racionales&);
-const Racionales operator/(const Racionales&,const Racionales&);
