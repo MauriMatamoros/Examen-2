@@ -12,7 +12,8 @@ int divisores(int);
 int main(int argc, char* argv[]){
 	try{
 		Racionales a(3,6), b(4,5), c(1,1), d;
-		//cout << a.toDouble() << endl;
+	
+
 		int divisores_denominador = divisores(a.getDenominador());
 		int divisores_numerador = divisores(a.getNumerador());
 		int array_denominador[divisores_denominador];
@@ -71,16 +72,17 @@ int main(int argc, char* argv[]){
 		
 				
 
-		
+
+	//	cout << b.toDouble() << endl;
+
 	}catch (const char* message){
 		cerr << "Excepcion: " << message << endl;
 	}
 	
-
 	return 0;
 }
 
-int divisores (int numero){
+/*int divisores (int numero){
 	int contador = 0;
 	for (int i = 1; i <= numero; ++i)
 	{
@@ -90,4 +92,4 @@ int divisores (int numero){
 		}
 	}
 	return contador;
-}
+}*/
