@@ -74,8 +74,8 @@ const Racionales& Racionales::operator*=(const Racionales& r){
 	return *this;
 }
 const Racionales& Racionales::operator/=(const Racionales& r){
-	this->numerador /= r.getDenominador();
-	this->denominador /= r.getNumerador();
+	this->numerador *= r.getDenominador();
+	this->denominador *= r.getNumerador();
 	return *this;
 }
 const Racionales& Racionales::operator=(const Racionales& r){
