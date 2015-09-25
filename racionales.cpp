@@ -54,7 +54,7 @@ const Racionales& Racionales::operator+=(const Racionales& r){
 	return *this;
 }
 const Racionales& Racionales::operator-=(const Racionales& r){
-	if (this->denominador != r.getDenominador())
+	if (this->denominador != r.getDenominador()){
 		//cout << this->denominador << endl;
 		this->numerador *= r.getDenominador();
 		double rDen =0;
@@ -62,9 +62,10 @@ const Racionales& Racionales::operator-=(const Racionales& r){
 		//cout << rDen << endl;
 		this->denominador *= r.getDenominador();
 		this->numerador-= rDen;
-	else
+	}else{
 		this->denominador = r.getDenominador();
 		this->numerador -= r.getNumerador();
+	}
 	return *this;
 }
 const Racionales& Racionales::operator*=(const Racionales& r){

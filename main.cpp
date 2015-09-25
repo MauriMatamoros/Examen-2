@@ -11,7 +11,7 @@ int divisores(int);
 
 int main(int argc, char* argv[]){
 	try{
-		Racionales a(3,6), b(4,5), c(1,1);
+		Racionales a(3,6), b(4,5), c(1,1), d;
 		//cout << a.toDouble() << endl;
 		int divisores_denominador = divisores(a.getDenominador());
 		int divisores_numerador = divisores(a.getNumerador());
@@ -47,10 +47,10 @@ int main(int argc, char* argv[]){
 			}
 		}
 		
-		a+=b;
-
+		a/=b;
+		d = (a+b);
 		cout << a.toString() << endl;
-
+		cout << "d: " << d.toString() << endl; 
 		//Racionales f;
 		//f = b*b;
 		
